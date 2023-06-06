@@ -11,3 +11,11 @@ user_profle= pd.read_csv("mylib/user_profile_test.csv", index_col="article_id").
 run_inference_on_new_user(items_,data_tfidf,5,[663713001])
 run_inference_on_new_user(items_,data_tfidf,5,[663713001,487205007])
 run_inference_on_new_user(items_,data_tfidf,5,[663713001,487205007,770587002])
+
+
+
+#### Command Line Prompt to run  
+chmod +x CLI_run_rec_sys.py
+./CLI_run_rec_sys.py --tfidf_file=mylib/data_tfidf_stem_test.csv --items_file=mylib/articles.csv --user_profile_file=mylib/user_profile_test.csv --k 10 --new_user_items [696356013]
+./CLI_run_rec_sys.py --tfidf_file=mylib/data_tfidf_stem_test.csv --items_file=mylib/articles.csv --user_profile_file=mylib/user_profile_test.csv --k 10 --new_user_items [696356013,766777012,771881001]
+########################################################

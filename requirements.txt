@@ -8,3 +8,4 @@ fastapi
 pytest-cov
 requests
 fire
+Jinja2
