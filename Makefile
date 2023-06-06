@@ -3,7 +3,7 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest test_CLI_run_rec_sys.py
+	python -m pytest test_run_rec_sys.py
 
 format:
 	black *.py
@@ -17,4 +17,4 @@ lint:
 	pylint --disable=R,C --ignored-modules=module_name *.py
 	
 
-all: install lint test
+all: install test format

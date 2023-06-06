@@ -42,7 +42,7 @@ def run_inference_cli(
     )
 
     recommendations = run_inference_on_new_user(items_, data_tfidf, k, new_user_items)
-    
+
     return recommendations
 
 

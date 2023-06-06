@@ -48,7 +48,6 @@ def run_inference_on_new_user(items, data, k=10, new_user_items=None):
     # compute the recommendations for the new user
     suggested_recommendations, cosine_sim = rs.compute_recommendation(new_user_items)
 
-
     # Shows users Purchase History
     new_user = new_user_items
 
@@ -66,11 +65,15 @@ def run_inference_on_new_user(items, data, k=10, new_user_items=None):
     print("THESE ARE THE RECOMMENDATIONS FOR THE NEW USER")
 
     recommendation_table = PrettyTable()
-    recommendation_table.field_names = ["Product Name", "Section Name", "Cosine Similarity"]
+    recommendation_table.field_names = [
+        "Product Name",
+        "Section Name",
+        "Cosine Similarity",
+    ]
     recommendation_data = items.iloc[suggested_recommendations, [1, 20]].copy()
     recommendation_data["Cosine Similarity"] = cosine_sim
     recommendation_table.add_rows(recommendation_data.values)
 
-    print(recommendation_table) 
+    print(recommendation_table)
 
     return suggested_recommendations
