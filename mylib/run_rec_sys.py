@@ -2,9 +2,8 @@
 
 import json
 import numpy as np
+from prettytable import PrettyTable
 from mylib.rec_sys import Recommender, ContentBasedRS
-
-
 
 
 # data_ = pd.read_csv("item_descr_train_doc2vec_2.csv", index_col="article_id")
@@ -49,19 +48,29 @@ def run_inference_on_new_user(items, data, k=10, new_user_items=None):
     # compute the recommendations for the new user
     suggested_recommendations, cosine_sim = rs.compute_recommendation(new_user_items)
 
+
     # Shows users Purchase History
     new_user = new_user_items
 
     purchase_history = items.loc[new_user, ["prod_name", "section_name"]]
+
+    # Print the Purchase History using PrettyTable
+    purchase_table = PrettyTable()
+    purchase_table.field_names = ["Product Name", "Section Name"]
+    purchase_table.add_rows(purchase_history.values)
+    print("**" * 100)
     print("This is the New User Purchase History")
-    print(purchase_history)
+    print(purchase_table)
 
-    ######## Return the recommendations ########
-    # items = pd.read_csv("articles.csv", index_col="article_id")
+    print("**" * 100)
+    print("THESE ARE THE RECOMMENDATIONS FOR THE NEW USER")
 
-    print("THESE ARE THE RECOMMENDATION FOR NEW USER")
+    recommendation_table = PrettyTable()
+    recommendation_table.field_names = ["Product Name", "Section Name", "Cosine Similarity"]
+    recommendation_data = items.iloc[suggested_recommendations, [1, 20]].copy()
+    recommendation_data["Cosine Similarity"] = cosine_sim
+    recommendation_table.add_rows(recommendation_data.values)
 
-    recomendatio_item = items.iloc[suggested_recommendations, [1, 20]]
-    recomendatio_item["cosine_sim"] = cosine_sim
+    print(recommendation_table) 
 
-    return recomendatio_item
+# return recomendatio_item
