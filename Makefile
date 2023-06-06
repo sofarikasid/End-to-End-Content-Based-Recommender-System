@@ -10,11 +10,6 @@ format:
 	black mylib/*.py
 
 lint:
-	# run lint checks on all python files in the directory and subdirectories
-	
-	#pylint --disable=R,C *.py
-	#pylint --disable=W,C --ignored-modules=module_name mylib/*.py
-	pylint --disable=R,C --ignored-modules=module_name *.py
-	
+	pylint --disable=R,C --extension-pkg-whitelist='pydantic' mylib/main.py --ignore-patterns=test_.*?py *.py mylib/*.py
 
 all: install test format
