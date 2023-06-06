@@ -73,4 +73,4 @@ def run_inference_on_new_user(items, data, k=10, new_user_items=None):
 
     print(recommendation_table) 
 
-# return recomendatio_item
+    return suggested_recommendations
