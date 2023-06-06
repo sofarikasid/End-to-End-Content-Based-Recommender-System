@@ -35,16 +35,15 @@ async def read_root():
 @app.post("/inference")
 def inference(request: InferenceRequest):
     new_user_items = request.new_user_items
-   
+
     # Perform inference
     recommendations = run_inference_on_new_user(
         items, data_tfidf, k=10, new_user_items=new_user_items
     )
-    
-    return recommendations.get_html_string()
+
+    return recommendations[1].get_html_string()
+
 
 # Run the FastAPI app
 if __name__ == "__main__":
-    
-
     uvicorn.run("main:app", host="0.0.0.0", port=8000)
