@@ -1,0 +1,10 @@
+pandas
+numpy
+scikit-learn
+pylint
+pytest
+black
+fastapi
+pytest-cov
+requests
+fire
