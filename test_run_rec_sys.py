@@ -20,10 +20,10 @@ def test_run_inference_on_new_user():
     )
     # assert [ 27 ,  20,  133,   30, 1131, 3720, 3374,  159, 2658,  990] ==(suggested_recommendations)
     assert np.any(
-        np.array(suggested_recommendations)
+        np.array(suggested_recommendations[1])
         == [27, 20, 133, 30, 1131, 3720, 3374, 159, 2658, 990]
     )
-    assert len(suggested_recommendations) == 10
+    assert len(suggested_recommendations[1]) == 10
 
 
 # Run the tests
