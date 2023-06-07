@@ -1,4 +1,4 @@
-name: end-to-end-content-based-RS
+name: CI-content-based-RS
 
 on: [push]
 
