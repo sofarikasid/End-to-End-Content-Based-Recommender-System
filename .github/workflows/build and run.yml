@@ -1,4 +1,4 @@
-name: end-to-end-content-based-RS
+name: Build and push Docker image upon release
 
 on: [push]
 
