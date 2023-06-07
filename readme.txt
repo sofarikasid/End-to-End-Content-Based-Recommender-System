@@ -19,3 +19,12 @@ chmod +x CLI_run_rec_sys.py
 ./CLI_run_rec_sys.py --tfidf_file=mylib/data_tfidf_stem_test.csv --items_file=mylib/articles.csv --user_profile_file=mylib/user_profile_test.csv --k 10 --new_user_items [696356013]
 ./CLI_run_rec_sys.py --tfidf_file=mylib/data_tfidf_stem_test.csv --items_file=mylib/articles.csv --user_profile_file=mylib/user_profile_test.csv --k 10 --new_user_items [696356013,766777012,771881001]
 ########################################################
+### BUILD AND RUN docker
+# Build the Docker image
+docker build -t your-image-name .
+
+
+# Run the Docker container
+docker run -p 8000:8000 your-image-name
+
+
