@@ -1,4 +1,4 @@
-name: Rocchio Method for classification
+name: End-to-End-Content-based-RS
 
 on: [push]
 
