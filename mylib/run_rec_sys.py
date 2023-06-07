@@ -48,10 +48,7 @@ def run_inference_on_new_user(items, data, k=10, new_user_items=None):
     # compute the recommendations for the new user
     suggested_recommendations, cosine_sim = rs.compute_recommendation(new_user_items)
 
-    # Shows users Purchase History
-    new_user = new_user_items
 
-    purchase_history = items.loc[new_user, ["prod_name", "section_name"]]
 
     # Print the Purchase History using PrettyTable
     purchase_table = PrettyTable()
