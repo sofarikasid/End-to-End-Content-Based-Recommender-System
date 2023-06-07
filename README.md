@@ -8,10 +8,5 @@
 ### Dataset 
   - https://www.kaggle.com/c/h-and-m-personalized-fashion-recommendations
   
-
-### CTL Output
-![image](https://github.com/sofarikasid/End-to-End-Content-Based-Recommender-System/assets/33644535/53a2ddc2-2072-405f-a430-142c57e06830)
-
-### FASTAPI 
-![image](https://github.com/sofarikasid/End-to-End-Content-Based-Recommender-System/assets/33644535/3c204148-cea2-4496-b499-2aa32b52111d)
+  
 
