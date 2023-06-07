@@ -28,14 +28,8 @@ jobs:
     needs: build
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Docker
-        uses: docker/setup-docker@v1
-
       - name: Build Docker image
         run: docker build -t my-docker-image .
 
       - name: Run Docker container
-        run: docker run my-docker-image
+        run: docker run -p 8000:8000 my-docker-image
